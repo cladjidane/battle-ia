@@ -23,6 +23,13 @@
 
 html { scroll-behavior: smooth; }
 
+/* ── MAX WIDTH CONTAINER ── */
+.max-w {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 body {
   background: var(--black);
   color: var(--white);
@@ -648,7 +655,7 @@ footer {
   .pq-wide { grid-column: span 1; }
   .levels-grid { grid-template-columns: 1fr; }
   .cta-section { padding: 80px 24px; }
-  footer { flex-direction: column; gap: 12px; text-align: center; }
+  footer .max-w { flex-direction: column; gap: 12px; text-align: center; }
   .footer-right { text-align: center; }
   .cta-actions { flex-direction: column; align-items: stretch; }
   .btn-primary, .btn-secondary, .btn-tel { justify-content: center; }
@@ -659,13 +666,16 @@ footer {
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="#" class="nav-logo">AI Creation Battle</a>
-  <a href="#contact" class="nav-cta">Devenir partenaire →</a>
+  <div class="max-w" style="display:flex;align-items:center;justify-content:space-between;">
+    <a href="#" class="nav-logo">AI Creation Battle</a>
+    <a href="#contact" class="nav-cta">Devenir partenaire →</a>
+  </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg-text">BATTLE</div>
+  <div class="max-w" style="position:relative;z-index:1;">
 
   <div class="hero-tag">
     <div class="tag-dot"></div>
@@ -700,6 +710,7 @@ footer {
     </div>
   </div>
 
+  </div>
   <div class="scroll-hint">
     <div class="scroll-line"></div>
     <span class="scroll-label">Scroll</span>
@@ -708,6 +719,7 @@ footer {
 
 <!-- POURQUOI -->
 <section>
+  <div class="max-w">
   <div class="section-label reveal">Pourquoi cet event existe</div>
   <div class="section-title reveal reveal-delay-1">L'IA redessine<br>les règles du jeu.<br><span class="accent">En ce moment.</span></div>
 
@@ -732,10 +744,12 @@ footer {
       <div class="pq-text">Context Collective est une communauté bretonne de professionnels qui pratiquent et partagent autour de l'intelligence artificielle. L'AI Creation Battle est l'un des projets qu'elle porte pour rendre ces sujets concrets et accessibles sur le territoire. <strong>Les partenaires de cet événement soutiennent directement une initiative locale indépendante, portée par des praticiens, au service des professionnels bretons.</strong></div>
     </div>
   </div>
+  </div>
 </section>
 
 <!-- FORMAT -->
 <section class="format-section">
+  <div class="max-w">
   <div class="section-label reveal">Format de la soirée</div>
   <div class="section-title reveal reveal-delay-1">3 heures.<br>Pas une <span class="accent">de trop.</span></div>
 
@@ -784,10 +798,12 @@ footer {
       <div class="ls-text">Pendant toute l'heure de build, les écrans des participants sont projetés en temps réel. <strong>Les spectateurs voient les prompts, les itérations, les erreurs, les interfaces qui naissent.</strong> Pas du highlight reel. Du live brut. C'est ce qui rend cet event unique et ce qui en fait un outil de prise de conscience pour toute entreprise dans la salle.</div>
     </div>
   </div>
+  </div>
 </section>
 
 <!-- PARTENAIRES -->
 <section id="partenaires">
+  <div class="max-w">
   <div class="section-label reveal">Rejoindre l'aventure</div>
   <div class="section-title reveal reveal-delay-1">Plusieurs façons<br>de <span class="accent">contribuer.</span></div>
 
@@ -887,12 +903,13 @@ footer {
     </div>
 
   </div>
+  </div>
 </section>
 
 <!-- CTA -->
 <section class="cta-section" id="contact">
   <div class="cta-bg">CC</div>
-  <div class="cta-content">
+  <div class="cta-content max-w">
 
     <div class="cta-title reveal">
       On vous<br><span>explique tout.</span>
@@ -924,6 +941,7 @@ footer {
 
 <!-- FOOTER -->
 <footer>
+  <div class="max-w" style="display:flex;align-items:center;justify-content:space-between;">
   <div class="footer-left">
     Context Collective — Communauté IA Bretagne<br>
     AI Creation Battle — Édition fondatrice 2026
@@ -931,6 +949,7 @@ footer {
   <div class="footer-right">
     Organisé par Context Collective<br>
     <a href="mailto:contact@koality.fr">contact@koality.fr</a>
+  </div>
   </div>
 </footer>
 
