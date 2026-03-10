@@ -35,7 +35,6 @@ body {
   color: var(--white);
   font-family: 'DM Sans', sans-serif;
   overflow-x: hidden;
-  cursor: crosshair;
 }
 
 /* ── GRAIN OVERLAY ── */
@@ -54,10 +53,7 @@ nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px 48px;
+  padding: 20px 48px;
   border-bottom: 1px solid transparent;
   transition: border-color 0.3s, background 0.3s;
 }
@@ -65,6 +61,11 @@ nav.scrolled {
   background: rgba(8,8,8,0.95);
   border-color: var(--border);
   backdrop-filter: blur(8px);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .nav-logo {
   font-family: 'Space Mono', monospace;
@@ -84,9 +85,9 @@ nav.scrolled {
   background: var(--yellow);
   padding: 10px 24px;
   text-decoration: none;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, transform 0.2s;
 }
-.nav-cta:hover { opacity: 0.85; }
+.nav-cta:hover { opacity: 0.88; transform: translateY(-1px); }
 
 /* ── HERO ── */
 .hero {
@@ -94,7 +95,7 @@ nav.scrolled {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 0 48px 72px;
+  padding: 0 48px 80px;
   position: relative;
   overflow: hidden;
 }
@@ -149,7 +150,7 @@ nav.scrolled {
   font-size: clamp(72px, 10vw, 140px);
   line-height: 0.88;
   letter-spacing: 0.01em;
-  margin-bottom: 40px;
+  margin-bottom: 48px;
   opacity: 0;
   animation: fadeup 0.8s 0.4s forwards;
 }
@@ -162,7 +163,7 @@ nav.scrolled {
 .hero-bottom {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  gap: 56px;
   align-items: end;
   opacity: 0;
   animation: fadeup 0.8s 0.6s forwards;
@@ -181,16 +182,19 @@ nav.scrolled {
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
   border: 1px solid var(--border);
+  background: rgba(255,255,255,0.02);
 }
 .hstat {
-  padding: 24px 24px;
+  padding: 28px 24px;
   border-right: 1px solid var(--border);
   text-align: center;
+  transition: background 0.3s;
 }
 .hstat:last-child { border-right: none; }
+.hstat:hover { background: rgba(255,229,0,0.04); }
 .hstat-val {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 44px;
+  font-size: 48px;
   color: var(--yellow);
   line-height: 1;
 }
@@ -200,7 +204,7 @@ nav.scrolled {
   color: var(--grey);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
 .scroll-hint {
@@ -246,22 +250,25 @@ section {
   border-top: 1px solid var(--border);
 }
 
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+.section-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 14px;
+  color: var(--yellow);
+  letter-spacing: 0.05em;
+  opacity: 0.5;
+}
 .section-label {
   font-family: 'Space Mono', monospace;
   font-size: 12px;
   letter-spacing: 0.2em;
   color: var(--grey);
   text-transform: uppercase;
-  margin-bottom: 24px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.section-label::before {
-  content: '';
-  width: 24px;
-  height: 1px;
-  background: var(--yellow);
 }
 
 .section-title {
@@ -284,18 +291,22 @@ section {
 .pq-block {
   background: var(--black);
   padding: 48px 40px;
-  transition: background 0.2s;
+  transition: background 0.3s;
+  position: relative;
 }
 .pq-block:hover { background: var(--dark); }
 .pq-num {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 64px;
+  font-size: 80px;
   color: var(--border);
   line-height: 1;
-  margin-bottom: 16px;
-  transition: color 0.2s;
+  margin-bottom: 20px;
+  transition: color 0.3s, transform 0.3s;
 }
-.pq-block:hover .pq-num { color: var(--yellow); }
+.pq-block:hover .pq-num {
+  color: var(--yellow);
+  transform: translateX(4px);
+}
 .pq-title {
   font-size: 16px;
   font-weight: 600;
@@ -315,14 +326,27 @@ section {
 .pq-wide {
   grid-column: span 2;
   background: var(--yellow);
-  padding: 48px 40px;
+  padding: 56px 48px;
+  position: relative;
+  overflow: hidden;
 }
-.pq-wide .pq-num { color: rgba(0,0,0,0.12); }
+.pq-wide::after {
+  content: 'BATTLE';
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 160px;
+  color: rgba(0,0,0,0.06);
+  pointer-events: none;
+  line-height: 1;
+}
+.pq-wide .pq-num { color: rgba(0,0,0,0.15); }
 .pq-wide .pq-title { color: var(--black); }
 .pq-wide .pq-text { color: #333; }
 .pq-wide .pq-text strong { color: var(--black); }
 .pq-wide:hover { background: var(--yellow); }
-.pq-wide:hover .pq-num { color: rgba(0,0,0,0.2); }
+.pq-wide:hover .pq-num { color: rgba(0,0,0,0.25); transform: translateX(4px); }
 
 /* ── FORMAT ── */
 .format-section { background: var(--dark); }
@@ -331,21 +355,54 @@ section {
   display: flex;
   flex-direction: column;
   gap: 0;
-  border: 1px solid var(--border);
   max-width: 800px;
+  position: relative;
 }
+
+/* vertical line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 60px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--orange), var(--yellow));
+  opacity: 0.3;
+}
+
 .tl-item {
   display: grid;
   grid-template-columns: 120px 1fr;
-  border-bottom: 1px solid var(--border);
   overflow: hidden;
-  transition: background 0.2s;
+  transition: background 0.3s;
+  position: relative;
+  border-bottom: 1px solid var(--border);
 }
 .tl-item:last-child { border-bottom: none; }
-.tl-item:hover { background: #1a1a1a; }
+
+/* dot on timeline */
+.tl-item::before {
+  content: '';
+  position: absolute;
+  left: 56px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--dark);
+  border: 2px solid var(--orange);
+  z-index: 2;
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.tl-item:hover::before {
+  background: var(--orange);
+  box-shadow: 0 0 12px rgba(255,77,0,0.4);
+}
+
+.tl-item:hover { background: rgba(255,255,255,0.02); }
 .tl-time {
-  background: var(--black);
-  border-right: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -353,9 +410,11 @@ section {
   font-size: 14px;
   font-weight: 700;
   color: var(--orange);
-  padding: 24px;
+  padding: 28px 24px;
+  transition: color 0.3s;
 }
-.tl-content { padding: 24px 32px; }
+.tl-item:hover .tl-time { color: var(--yellow); }
+.tl-content { padding: 28px 32px; }
 .tl-name {
   font-size: 15px;
   font-weight: 600;
@@ -369,17 +428,35 @@ section {
   font-weight: 300;
 }
 
+/* highlight the build item */
+.tl-item.tl-highlight {
+  background: rgba(255,77,0,0.04);
+  border-left: 3px solid var(--orange);
+}
+.tl-item.tl-highlight::before {
+  background: var(--orange);
+  width: 11px;
+  height: 11px;
+  left: 52px;
+  box-shadow: 0 0 16px rgba(255,77,0,0.5);
+}
+
 .live-screen-callout {
-  margin-top: 48px;
+  margin-top: 56px;
   border: 1px solid var(--yellow);
-  padding: 32px 36px;
+  padding: 36px 40px;
   display: flex;
-  gap: 24px;
+  gap: 28px;
   align-items: flex-start;
   max-width: 800px;
+  background: rgba(255,229,0,0.03);
+  transition: background 0.3s, border-color 0.3s;
+}
+.live-screen-callout:hover {
+  background: rgba(255,229,0,0.06);
 }
 .ls-icon {
-  font-size: 28px;
+  font-size: 32px;
   flex-shrink: 0;
   margin-top: 2px;
 }
@@ -390,7 +467,7 @@ section {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--yellow);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 .ls-text {
   font-size: 15px;
@@ -411,12 +488,32 @@ section {
   border: 1px solid var(--border);
   background: var(--card);
   overflow: hidden;
-  transition: border-color 0.25s, transform 0.25s;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
   cursor: default;
+  position: relative;
 }
+/* colored top accent bar */
+.level-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  transition: height 0.3s;
+}
+.lc-financier::before { background: #D4AC0D; }
+.lc-reseau::before { background: #3498db; }
+.lc-technique::before { background: var(--orange); }
+.lc-mentor::before { background: #2ecc71; }
+
 .level-card:hover {
-  border-color: var(--yellow);
-  transform: translateY(-3px);
+  border-color: #333;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+.level-card:hover::before {
+  height: 4px;
 }
 
 .lc-header {
@@ -437,7 +534,7 @@ section {
   font-family: 'Space Mono', monospace;
   font-size: 12px;
   font-weight: 700;
-  padding: 4px 10px;
+  padding: 6px 12px;
   border: 1px solid;
   white-space: nowrap;
   margin-top: 4px;
@@ -453,7 +550,7 @@ section {
 .lc-mentor .lc-amount { color: #2ecc71; border-color: #2ecc71; background: rgba(46,204,113,0.08); }
 
 .lc-body {
-  padding: 24px 32px;
+  padding: 28px 32px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
@@ -464,9 +561,9 @@ section {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--grey);
-  padding-bottom: 8px;
+  padding-bottom: 10px;
   border-bottom: 1px solid var(--border);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 .lc-item {
   font-size: 14px;
@@ -476,13 +573,15 @@ section {
   border-left: 2px solid var(--border);
   margin-bottom: 10px;
   font-weight: 300;
+  transition: border-color 0.3s, color 0.3s;
 }
+.level-card:hover .lc-item { border-left-color: #333; }
 .lc-item strong { color: #ccc; font-weight: 500; }
 .lc-item:last-child { margin-bottom: 0; }
 
 /* ── CTA FINAL ── */
 .cta-section {
-  padding: 120px 48px;
+  padding: 140px 48px;
   background: var(--dark);
   border-top: 1px solid var(--border);
   text-align: center;
@@ -506,9 +605,9 @@ section {
 .cta-content { position: relative; z-index: 2; }
 .cta-title {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(52px, 7vw, 96px);
+  font-size: clamp(56px, 8vw, 110px);
   line-height: 0.9;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   letter-spacing: 0.01em;
 }
 .cta-title span { color: var(--yellow); }
@@ -517,7 +616,7 @@ section {
   font-weight: 300;
   color: #777;
   max-width: 520px;
-  margin: 0 auto 56px;
+  margin: 0 auto 64px;
   line-height: 1.75;
 }
 .cta-subtitle strong { color: #bbb; font-weight: 500; }
@@ -526,38 +625,42 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
 .btn-primary {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   background: var(--yellow);
   color: var(--black);
   font-family: 'Space Mono', monospace;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  padding: 18px 36px;
+  padding: 20px 40px;
   text-decoration: none;
-  transition: opacity 0.2s, transform 0.2s;
+  transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
 }
-.btn-primary:hover { opacity: 0.88; transform: translateY(-2px); }
+.btn-primary:hover {
+  opacity: 0.92;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255,229,0,0.2);
+}
 
 .btn-secondary {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   border: 1px solid var(--border);
   color: var(--white);
   font-family: 'Space Mono', monospace;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  padding: 18px 36px;
+  padding: 20px 40px;
   text-decoration: none;
   transition: border-color 0.2s, transform 0.2s, background 0.2s;
   background: transparent;
@@ -568,7 +671,7 @@ section {
   transform: translateY(-2px);
 }
 
-.btn-icon { font-size: 14px; }
+.btn-icon { font-size: 16px; }
 
 .cta-or {
   font-family: 'Space Mono', monospace;
@@ -581,13 +684,13 @@ section {
 .btn-tel {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   border: 1px solid var(--border);
   color: #888;
   font-family: 'Space Mono', monospace;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.12em;
-  padding: 18px 32px;
+  padding: 20px 36px;
   text-decoration: none;
   transition: border-color 0.2s, color 0.2s;
   background: transparent;
@@ -595,7 +698,7 @@ section {
 .btn-tel:hover { border-color: var(--grey); color: var(--white); }
 
 .cta-note {
-  margin-top: 40px;
+  margin-top: 48px;
   font-family: 'Space Mono', monospace;
   font-size: 11px;
   color: #444;
@@ -604,8 +707,10 @@ section {
 
 /* ── FOOTER ── */
 footer {
-  padding: 24px 48px;
+  padding: 32px 48px;
   border-top: 1px solid var(--border);
+}
+.footer-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -645,20 +750,28 @@ footer {
 .reveal-delay-1 { transition-delay: 0.1s; }
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
 
+/* ── RESPONSIVE ── */
 @media (max-width: 720px) {
   nav { padding: 16px 24px; }
-  section { padding: 72px 24px; }
+  section { padding: 80px 24px; }
   .hero { padding: 0 24px 64px; }
   .hero-bottom { grid-template-columns: 1fr; gap: 32px; }
   .pourquoi-grid { grid-template-columns: 1fr; }
   .pq-wide { grid-column: span 1; }
+  .pq-wide::after { display: none; }
   .levels-grid { grid-template-columns: 1fr; }
   .cta-section { padding: 80px 24px; }
-  footer .max-w { flex-direction: column; gap: 12px; text-align: center; }
+  .footer-inner { flex-direction: column; gap: 12px; text-align: center; }
   .footer-right { text-align: center; }
   .cta-actions { flex-direction: column; align-items: stretch; }
   .btn-primary, .btn-secondary, .btn-tel { justify-content: center; }
+  .timeline::before { left: 20px; }
+  .tl-item::before { left: 16px; }
+  .tl-item.tl-highlight::before { left: 12px; }
+  .tl-item { grid-template-columns: 80px 1fr; }
+  .section-header { gap: 12px; }
 }
 </style>
 </head>
@@ -666,9 +779,9 @@ footer {
 
 <!-- NAV -->
 <nav id="nav">
-  <div class="max-w" style="display:flex;align-items:center;justify-content:space-between;">
+  <div class="max-w nav-inner">
     <a href="#" class="nav-logo">AI Creation Battle</a>
-    <a href="#contact" class="nav-cta">Devenir partenaire →</a>
+    <a href="#contact" class="nav-cta">Devenir partenaire</a>
   </div>
 </nav>
 
@@ -679,7 +792,7 @@ footer {
 
   <div class="hero-tag">
     <div class="tag-dot"></div>
-    <span class="tag-text">Context Collective — Brest, Bretagne — Édition 01 — 2026</span>
+    <span class="tag-text">Context Collective / Brest, Bretagne / Édition 01 / 2026</span>
   </div>
 
   <div class="hero-title">
@@ -720,7 +833,10 @@ footer {
 <!-- POURQUOI -->
 <section>
   <div class="max-w">
-  <div class="section-label reveal">Pourquoi cet event existe</div>
+  <div class="section-header reveal">
+    <span class="section-num">01 /</span>
+    <span class="section-label">Pourquoi cet event existe</span>
+  </div>
   <div class="section-title reveal reveal-delay-1">L'IA redessine<br>les règles du jeu.<br><span class="accent">En ce moment.</span></div>
 
   <p class="reveal reveal-delay-1" style="font-size:17px; color:#777; font-weight:300; max-width:660px; line-height:1.8; margin-bottom:56px;">
@@ -750,7 +866,10 @@ footer {
 <!-- FORMAT -->
 <section class="format-section">
   <div class="max-w">
-  <div class="section-label reveal">Format de la soirée</div>
+  <div class="section-header reveal">
+    <span class="section-num">02 /</span>
+    <span class="section-label">Format de la soirée</span>
+  </div>
   <div class="section-title reveal reveal-delay-1">3 heures.<br>Pas une <span class="accent">de trop.</span></div>
 
   <div class="timeline reveal reveal-delay-2">
@@ -761,10 +880,10 @@ footer {
         <div class="tl-desc">Chaque participant présente son idée en 2 min. Les mentors challengent, affinent, orientent.</div>
       </div>
     </div>
-    <div class="tl-item">
+    <div class="tl-item tl-highlight">
       <div class="tl-time">19H30</div>
       <div class="tl-content">
-        <div class="tl-name">🔴 TOP CHRONO — Build commence</div>
+        <div class="tl-name">TOP CHRONO — Build commence</div>
         <div class="tl-desc">1 heure pile. Chaque participant reçoit son budget tokens et accède à son environnement isolé. Les écrans sont captés en direct.</div>
       </div>
     </div>
@@ -792,7 +911,7 @@ footer {
   </div>
 
   <div class="live-screen-callout reveal reveal-delay-3">
-    <div class="ls-icon">📡</div>
+    <div class="ls-icon">&#9673;</div>
     <div class="ls-content">
       <div class="ls-title">L'écran live — notre signature</div>
       <div class="ls-text">Pendant toute l'heure de build, les écrans des participants sont projetés en temps réel. <strong>Les spectateurs voient les prompts, les itérations, les erreurs, les interfaces qui naissent.</strong> Pas du highlight reel. Du live brut. C'est ce qui rend cet event unique et ce qui en fait un outil de prise de conscience pour toute entreprise dans la salle.</div>
@@ -804,7 +923,10 @@ footer {
 <!-- PARTENAIRES -->
 <section id="partenaires">
   <div class="max-w">
-  <div class="section-label reveal">Rejoindre l'aventure</div>
+  <div class="section-header reveal">
+    <span class="section-num">03 /</span>
+    <span class="section-label">Rejoindre l'aventure</span>
+  </div>
   <div class="section-title reveal reveal-delay-1">Plusieurs façons<br>de <span class="accent">contribuer.</span></div>
 
   <p class="reveal reveal-delay-2" style="font-size:17px; color:#777; font-weight:300; max-width:620px; line-height:1.75; margin-bottom:56px;">
@@ -818,7 +940,7 @@ footer {
         <div>
           <div class="lc-name">Partenaire Financier</div>
         </div>
-        <div class="lc-amount">200 — 500 €</div>
+        <div class="lc-amount">200 — 500 &#8364;</div>
       </div>
       <div class="lc-body">
         <div>
@@ -920,17 +1042,17 @@ footer {
 
     <div class="cta-actions reveal reveal-delay-2">
       <a href="mailto:contact@koality.fr?subject=AI%20Creation%20Battle%20-%20Partenariat&body=Bonjour%20Fabien%2C%0A%0AJe%20suis%20int%C3%A9ress%C3%A9%20par%20un%20partenariat%20pour%20l'AI%20Creation%20Battle.%0A%0APeux-tu%20me%20donner%20plus%20d'informations%20%3F%0A%0ACordialement%2C" class="btn-primary">
-        <span class="btn-icon">✉</span>
+        <span class="btn-icon">&#9993;</span>
         Envoyer un mail
       </a>
       <span class="cta-or">ou</span>
       <a href="https://wa.me/33XXXXXXXXX?text=Bonjour%20Fabien%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20un%20partenariat%20pour%20l%27AI%20Creation%20Battle." class="btn-secondary">
-        <span class="btn-icon">💬</span>
+        <span class="btn-icon">&#9998;</span>
         WhatsApp
       </a>
       <span class="cta-or">ou</span>
       <a href="tel:+33XXXXXXXXX" class="btn-tel">
-        <span class="btn-icon">📞</span>
+        <span class="btn-icon">&#9742;</span>
         +33 X XX XX XX XX
       </a>
     </div>
@@ -941,7 +1063,7 @@ footer {
 
 <!-- FOOTER -->
 <footer>
-  <div class="max-w" style="display:flex;align-items:center;justify-content:space-between;">
+  <div class="max-w footer-inner">
   <div class="footer-left">
     Context Collective — Communauté IA Bretagne<br>
     AI Creation Battle — Édition fondatrice 2026
