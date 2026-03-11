@@ -1,0 +1,151 @@
+---
+const { current = '' } = Astro.props;
+const links = [
+  { href: '/la-battle', label: 'La Battle' },
+  { href: '/edition-01', label: 'Édition 01' },
+  { href: '/participer', label: 'Participer' },
+  { href: '/faq', label: 'FAQ' },
+];
+---
+
+<nav id="nav">
+  <a href="/" class="nav-logo">AI Creation Battle</a>
+  <div class="nav-links">
+    {links.map(l => (
+      <a href={l.href} class={`nav-link ${current === l.href ? 'active' : ''}`}>{l.label}</a>
+    ))}
+  </div>
+  <a href="/nous-soutenir" class="nav-cta">Soutenir le projet →</a>
+  <button class="nav-burger" id="burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile">
+  {links.map(l => (
+    <a href={l.href} class="nm-link">{l.label}</a>
+  ))}
+  <a href="/nous-soutenir" class="nm-cta">Soutenir le projet →</a>
+</div>
+
+<style>
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px max(56px, calc(50% - 600px));
+  transition: background 0.4s, border-color 0.4s;
+  border-bottom: 1px solid transparent;
+}
+nav.scrolled {
+  background: rgba(8,8,8,0.96);
+  border-color: var(--border);
+  backdrop-filter: blur(12px);
+}
+.nav-logo {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--yellow);
+  text-transform: uppercase;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.nav-link {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--grey);
+  transition: color 0.2s;
+}
+.nav-link:hover, .nav-link.active { color: var(--white); }
+.nav-cta {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--yellow);
+  padding: 8px 18px;
+  transition: opacity 0.2s;
+}
+.nav-cta:hover { opacity: 0.85; }
+
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-burger span {
+  display: block;
+  width: 22px; height: 1px;
+  background: var(--white);
+  transition: transform 0.3s;
+}
+
+.nav-mobile {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background: var(--black);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 80px 24px 48px;
+}
+.nav-mobile.open { display: flex; }
+.nm-link {
+  font-family: var(--font-display);
+  font-size: 48px;
+  color: var(--white);
+  letter-spacing: 0.03em;
+  transition: color 0.2s;
+}
+.nm-link:hover { color: var(--yellow); }
+.nm-cta {
+  margin-top: 16px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--yellow);
+  padding: 12px 28px;
+}
+
+@media (max-width: 768px) {
+  nav { padding: 18px 24px !important; }
+  .nav-links, .nav-cta { display: none; }
+  .nav-burger { display: flex; }
+}
+</style>
+
+<script>
+const nav = document.getElementById('nav');
+const burger = document.getElementById('burger');
+const mobile = document.getElementById('nav-mobile');
+
+window.addEventListener('scroll', () => {
+  nav?.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+burger?.addEventListener('click', () => {
+  mobile?.classList.toggle('open');
+});
+</script>

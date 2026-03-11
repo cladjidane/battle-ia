@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const faqs = [
+  {
+    q: "Vous montrez qu'on peut faire en 1h ce qui prenait 2 semaines. Vous tuez des métiers.",
+    a: "C'est une observation légitime, pas une critique à esquiver. Ce que l'événement montre, c'est que l'IA amplifie ce que quelqu'un sait faire — elle ne remplace pas le jugement, l'expérience, la capacité à poser les bonnes questions. Un participant qui ne sait pas ce qu'il veut construire n'arrivera à rien en une heure. Ce qui change, c'est le coût d'accès à l'exécution. Ce qui reste rare et précieux, c'est la clarté sur ce qu'on veut."
+  },
+  {
+    q: "C'est réservé aux profils tech ?",
+    a: "Non. L'événement est conçu pour ça. Un profil métier avec une bonne connaissance de son domaine peut produire quelque chose de plus utile qu'un dev qui ne comprend pas le problème qu'il résout. La Battle va l'illustrer en direct — c'est l'un des points qu'on tient à rendre visible."
+  },
+  {
+    q: "L'IA produit des trucs qui ne marchent pas vraiment.",
+    a: "C'est pour ça qu'il y a une démo live. Ça tourne ou ça ne tourne pas — les deux sont acceptés et assumés. Ce qui compte, c'est ce qui a été produit en une heure, avec quels moyens, et comment. La transparence sur les tokens consommés fait partie du format : le public voit ce qui a été dépensé pour produire ce résultat."
+  },
+  {
+    q: "Pourquoi Brest ? Pourquoi Context Collective ?",
+    a: "Parce que c'est là qu'on est, et parce que ce type d'initiative doit venir des praticiens, pas des institutions. Context Collective rassemble des gens qui utilisent ces outils au quotidien dans leur travail. On organise des CaféIA, des talks, des ateliers depuis 2025. La Battle est une étape logique."
+  },
+  {
+    q: "Qu'est-ce que les tokens exactement ?",
+    a: "Les tokens, c'est la monnaie de l'IA. Chaque mot que tu envoies dans un prompt, chaque réponse que tu reçois — ça coûte des tokens. Et les tokens coûtent de l'argent réel. Dans la plupart des usages, ce coût est invisible. Dans la Battle, il est public. Apprendre à être efficace dans son usage, c'est une compétence professionnelle concrète et mesurable."
+  },
+  {
+    q: "Je ne suis pas développeur, est-ce que je peux quand même participer ?",
+    a: "Oui. La condition, c'est d'arriver avec une idée de projet et l'envie de la construire. Pas de savoir coder. Des participants sans expertise technique ont produit des résultats fonctionnels et utiles uniquement avec de bons prompts et une bonne connaissance de leur problème."
+  },
+  {
+    q: "C'est payant ?",
+    a: "Non. L'entrée est libre pour les participants comme pour les spectateurs. Le budget de l'événement est pris en charge par Context Collective et ses soutiens."
+  },
+  {
+    q: "Comment ça se passe si je dépasse mon budget tokens ?",
+    a: "Tu peux recharger — une recharge de +10$ de tokens est possible pendant l'heure de build. Mais chaque recharge pénalise ton score final. C'est un choix tactique : tu continues avec moins de ressources ou tu acceptes la pénalité pour aller plus loin."
+  },
+];
+---
+
+<BaseLayout title="FAQ" description="Questions fréquentes sur l'AI Creation Battle — format, tokens, participants, objections." current="/faq">
+
+<div class="page-hero">
+  <div class="page-hero-bg"><span>FAQ</span></div>
+  <div class="page-hero-eyebrow">Questions fréquentes</div>
+  <h1>Ce qu'on nous<br/><span class="yel">demande.</span></h1>
+</div>
+
+<section class="faq-section">
+  <div class="faq-list">
+    {faqs.map((item, i) => (
+      <div class="faq-item reveal" style={`transition-delay:${i * 0.05}s`}>
+        <div class="faq-q">
+          <span class="faq-num">{String(i + 1).padStart(2, '0')}</span>
+          <span>{item.q}</span>
+        </div>
+        <div class="faq-a">{item.a}</div>
+      </div>
+    ))}
+  </div>
+
+  <div class="faq-more reveal">
+    <p>Une question qui n'est pas là ?</p>
+    <a href="mailto:contact@koality.fr?subject=Question%20AI%20Creation%20Battle" class="btn-ghost">Écrire à Fabien →</a>
+  </div>
+</section>
+
+</BaseLayout>
+
+<style>
+.faq-section { background: var(--dark); }
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 800px;
+  margin-bottom: 64px;
+}
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 32px 0;
+}
+.faq-item:first-child { border-top: 1px solid var(--border); }
+.faq-q {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.5;
+}
+.faq-num {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--orange);
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: -2px;
+}
+.faq-a {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.8;
+  font-weight: 300;
+  padding-left: 48px;
+}
+
+.faq-more {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.faq-more p {
+  font-size: 14px;
+  color: #555;
+  font-weight: 300;
+}
+</style>

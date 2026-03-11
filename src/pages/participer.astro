@@ -1,0 +1,151 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Participer" description="Candidater à l'AI Creation Battle — qui peut participer, comment ça se passe." current="/participer">
+
+<div class="page-hero">
+  <div class="page-hero-bg"><span>BUILD</span></div>
+  <div class="page-hero-eyebrow">Candidater</div>
+  <h1>Tu arrives<br/>avec une <span class="yel">idée.</span></h1>
+</div>
+
+<section class="part-intro">
+  <div class="pi-grid reveal">
+    <div class="pi-left">
+      <p class="pi-lead">Tu repars avec quelque chose qui existe. Ou qui ne fonctionne pas encore. Les deux sont valables, et les deux sont honnêtes.</p>
+      <p>La seule condition pour participer à l'AI Creation Battle, c'est d'arriver avec un projet en tête et l'envie de le construire en une heure avec l'IA.</p>
+      <p>Pas besoin de coder. Pas besoin d'avoir déjà utilisé des APIs. Il faut savoir ce que tu veux construire et être prêt à te confronter au résultat en public.</p>
+    </div>
+    <div class="pi-right">
+      <div class="pi-info-block">
+        <div class="pib-label">Ce que tu reçois au départ</div>
+        <div class="pib-items">
+          <div class="pib-item"><span class="pib-dot"></span>Un budget tokens API identique à tous les autres participants</div>
+          <div class="pib-item"><span class="pib-dot"></span>Un accès isolé à l'outil (ton environnement, pas celui d'un voisin)</div>
+          <div class="pib-item"><span class="pib-dot"></span>30 min de mentorat en ouverture de soirée pour affiner ton idée</div>
+          <div class="pib-item"><span class="pib-dot"></span>Un retour jury après ta démo</div>
+        </div>
+      </div>
+      <div class="pi-info-block">
+        <div class="pib-label">Ce que tu dois prévoir</div>
+        <div class="pib-items">
+          <div class="pib-item"><span class="pib-dot"></span>Ton idée de projet — concrète, réalisable en 1h, utile ou intéressante</div>
+          <div class="pib-item"><span class="pib-dot"></span>Ton propre ordinateur</div>
+          <div class="pib-item"><span class="pib-dot"></span>3 heures de ta soirée</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="part-cta">
+  <div class="pct-inner reveal">
+    <div class="pct-title">Édition 01 — Mai 2026</div>
+    <p class="pct-sub">Les inscriptions ne sont pas encore ouvertes. Laisse ton email pour être prévenu en priorité quand l'appel à candidatures démarre.</p>
+    <div class="pct-form">
+      <input type="email" placeholder="ton@email.fr" class="pct-input" />
+      <button class="btn-main">Me prévenir →</button>
+    </div>
+    <p class="pct-note">Pas de newsletter. Un seul mail quand les inscriptions ouvrent.</p>
+  </div>
+</section>
+
+</BaseLayout>
+
+<style>
+.part-intro { background: var(--dark); }
+.pi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+}
+.pi-lead {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  border-left: 3px solid var(--yellow);
+  padding-left: 20px;
+}
+.pi-left p { font-size: 15px; color: #666; line-height: 1.8; font-weight: 300; margin-bottom: 16px; }
+
+.pi-info-block { border: 1px solid var(--border2); padding: 24px 28px; margin-bottom: 2px; }
+.pib-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 14px;
+}
+.pib-items { display: flex; flex-direction: column; gap: 10px; }
+.pib-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 13px;
+  color: #777;
+  line-height: 1.5;
+}
+.pib-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--orange);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.part-cta {
+  background: var(--black);
+  text-align: center;
+}
+.pct-inner { max-width: 520px; margin: 0 auto; }
+.pct-title {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5vw, 64px);
+  color: var(--yellow);
+  margin-bottom: 16px;
+  letter-spacing: 0.02em;
+}
+.pct-sub {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.75;
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+.pct-form {
+  display: flex;
+  gap: 0;
+  max-width: 420px;
+  margin: 0 auto 16px;
+}
+.pct-input {
+  flex: 1;
+  background: var(--card);
+  border: 1px solid var(--border2);
+  border-right: none;
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 14px 18px;
+  outline: none;
+  letter-spacing: 0.05em;
+}
+.pct-input::placeholder { color: #444; }
+.pct-input:focus { border-color: var(--yellow); }
+.pct-note {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: #333;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .pi-grid { grid-template-columns: 1fr; gap: 40px; }
+  .pct-form { flex-direction: column; }
+  .pct-input { border-right: 1px solid var(--border2); border-bottom: none; }
+}
+</style>
