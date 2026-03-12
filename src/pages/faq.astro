@@ -45,15 +45,15 @@ const faqs = [
   <h1>Ce qu'on nous<br/><span class="yel">demande.</span></h1>
 </div>
 
-<section class="faq-section">
+<section class="sec-alt">
   <div class="faq-list">
     {faqs.map((item, i) => (
-      <div class="faq-item reveal" style={`transition-delay:${i * 0.05}s`}>
+      <div class="faq-item reveal" style={`transition-delay:${i * 0.06}s`}>
         <div class="faq-q">
           <span class="faq-num">{String(i + 1).padStart(2, '0')}</span>
           <span>{item.q}</span>
         </div>
-        <div class="faq-a">{item.a}</div>
+        <p class="faq-a">{item.a}</p>
       </div>
     ))}
   </div>
@@ -67,17 +67,15 @@ const faqs = [
 </BaseLayout>
 
 <style>
-.faq-section { background: var(--dark); }
+.sec-alt { background: var(--dark); }
+
 .faq-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  max-width: 800px;
+  max-width: 760px;
   margin-bottom: 64px;
 }
 .faq-item {
   border-bottom: 1px solid var(--border);
-  padding: 32px 0;
+  padding: 36px 0;
 }
 .faq-item:first-child { border-top: 1px solid var(--border); }
 .faq-q {
@@ -85,10 +83,10 @@ const faqs = [
   gap: 20px;
   align-items: flex-start;
   margin-bottom: 16px;
-  font-size: 15px;
+}
+.faq-q span:last-child {
   font-weight: 600;
-  color: var(--white);
-  line-height: 1.5;
+  color: var(--text-1);
 }
 .faq-num {
   font-family: var(--font-display);
@@ -99,21 +97,13 @@ const faqs = [
   margin-top: -2px;
 }
 .faq-a {
-  font-size: 14px;
-  color: #666;
-  line-height: 1.8;
-  font-weight: 300;
   padding-left: 48px;
+  margin: 0;
 }
 
 .faq-more {
   display: flex;
   align-items: center;
   gap: 24px;
-}
-.faq-more p {
-  font-size: 14px;
-  color: #555;
-  font-weight: 300;
 }
 </style>

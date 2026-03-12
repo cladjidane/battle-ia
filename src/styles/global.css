@@ -5,28 +5,43 @@
 :root {
   --black:  #080808;
   --dark:   #0f0f0f;
-  --card:   #141414;
   --border: #1c1c1c;
   --border2:#272727;
   --yellow: #FFE500;
   --orange: #FF4D00;
   --white:  #F2EDE4;
-  --grey:   #555;
-  --mid:    #888;
+
+  /* strict text colors — no others */
+  --text-1: #F2EDE4;   /* headings, strong */
+  --text-2: #888;       /* body text */
+  --text-3: #555;       /* secondary, meta */
+  --text-4: #333;       /* very subtle */
 
   --font-display: 'Bebas Neue', sans-serif;
   --font-mono:    'Space Mono', monospace;
   --font-body:    'DM Sans', sans-serif;
+
+  --pad-x: max(56px, calc(50% - 600px));
+
+  /* strict type scale */
+  --text-body: 16px;
+  --text-lead: 18px;
+  --text-mono: 11px;
+  --text-mono-sm: 10px;
+  --lh-body: 1.75;
+  --lh-lead: 1.7;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
   background: var(--black);
-  color: var(--white);
+  color: var(--text-2);
   font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--lh-body);
+  font-weight: 300;
   overflow-x: hidden;
-  cursor: crosshair;
 }
 
 /* grain overlay */
@@ -40,57 +55,61 @@ body::before {
 }
 
 a { color: inherit; text-decoration: none; }
+strong { color: var(--text-1); font-weight: 500; }
 
-/* ── UTILITAIRES PARTAGÉS ── */
+/* ── SECTION ── */
+section {
+  padding: 140px var(--pad-x);
+  border-top: 1px solid var(--border);
+}
 
+/* ── EYEBROW ── */
 .s-eyebrow {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 20px;
+  gap: 16px;
+  margin-bottom: 28px;
 }
 .s-eyebrow::before {
   content: '';
-  width: 28px; height: 1px;
+  width: 32px; height: 1px;
   background: var(--yellow);
   flex-shrink: 0;
 }
 .s-eyebrow span {
   font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 0.22em;
-  color: var(--grey);
+  font-size: var(--text-mono);
+  letter-spacing: 0.2em;
+  color: var(--text-3);
   text-transform: uppercase;
 }
 
+/* ── SECTION TITLE ── */
 .s-title {
   font-family: var(--font-display);
-  font-size: clamp(52px, 7vw, 88px);
-  line-height: 0.9;
+  font-size: clamp(48px, 6vw, 80px);
+  line-height: 0.92;
   letter-spacing: 0.01em;
+  color: var(--text-1);
   margin-bottom: 56px;
 }
 .s-title .acc { color: var(--orange); }
 .s-title .yel { color: var(--yellow); }
 
-section {
-  padding: 108px max(56px, calc(50% - 600px));
-  border-top: 1px solid var(--border);
-}
-
-/* reveal */
+/* ── REVEAL ── */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition: opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1), transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
 }
 .reveal.on { opacity: 1; transform: none; }
-.rd1 { transition-delay: 0.08s; }
-.rd2 { transition-delay: 0.16s; }
-.rd3 { transition-delay: 0.24s; }
-.rd4 { transition-delay: 0.32s; }
+.rd1 { transition-delay: 0.1s; }
+.rd2 { transition-delay: 0.18s; }
+.rd3 { transition-delay: 0.26s; }
+.rd4 { transition-delay: 0.34s; }
+.rd5 { transition-delay: 0.42s; }
 
-/* boutons */
+/* ── BUTTONS ── */
 .btn-main {
   display: inline-flex;
   align-items: center;
@@ -98,45 +117,51 @@ section {
   background: var(--yellow);
   color: var(--black);
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: var(--text-mono);
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 14px 30px;
-  transition: opacity 0.2s, transform 0.2s;
+  padding: 16px 36px;
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s;
 }
-.btn-main:hover { opacity: 0.88; transform: translateY(-2px); }
+.btn-main:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255, 229, 0, 0.12);
+}
 
 .btn-ghost {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   border: 1px solid var(--border2);
-  color: var(--white);
+  color: var(--text-1);
   font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.16em;
+  font-size: var(--text-mono);
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 14px 26px;
+  padding: 16px 32px;
   background: transparent;
-  transition: border-color 0.2s, transform 0.2s;
+  transition: border-color 0.3s, transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
-.btn-ghost:hover { border-color: var(--white); transform: translateY(-2px); }
+.btn-ghost:hover {
+  border-color: var(--yellow);
+  transform: translateY(-2px);
+}
 
 .or-sep {
   font-family: var(--font-mono);
-  font-size: 9px;
-  color: var(--grey);
+  font-size: var(--text-mono);
+  color: var(--text-3);
   letter-spacing: 0.2em;
 }
 
-/* page header (pages intérieures) */
+/* ── PAGE HERO ── */
 .page-hero {
-  min-height: 44vh;
+  min-height: 48vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 120px max(56px, calc(50% - 600px)) 64px;
+  padding: 140px var(--pad-x) 72px;
   border-bottom: 1px solid var(--border);
   position: relative;
   overflow: hidden;
@@ -161,25 +186,26 @@ section {
 }
 .page-hero-eyebrow {
   font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 0.22em;
+  font-size: var(--text-mono);
+  letter-spacing: 0.2em;
   color: var(--yellow);
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 .page-hero-eyebrow::before {
   content: '';
-  width: 20px; height: 1px;
+  width: 24px; height: 1px;
   background: var(--yellow);
 }
 .page-hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(60px, 9vw, 120px);
-  line-height: 0.88;
+  font-size: clamp(64px, 10vw, 120px);
+  line-height: 0.9;
   letter-spacing: 0.01em;
+  color: var(--text-1);
 }
 .page-hero h1 .acc { color: var(--orange); }
 .page-hero h1 .yel { color: var(--yellow); }
@@ -188,9 +214,27 @@ section {
   color: transparent;
 }
 
-@media (max-width: 768px) {
-  section { padding: 72px 24px; }
-  .page-hero { padding: 100px 24px 48px; }
-  .s-title { margin-bottom: 36px; }
+/* ── LEAD TEXT ── max 1 per section */
+.lead {
+  font-size: var(--text-lead);
+  line-height: var(--lh-lead);
+  color: var(--text-1);
+  font-weight: 300;
+  max-width: 680px;
 }
 
+/* ── MONO LABEL ── */
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--yellow);
+}
+
+@media (max-width: 768px) {
+  :root { --pad-x: 24px; }
+  section { padding: 80px var(--pad-x); }
+  .page-hero { padding: 110px var(--pad-x) 48px; }
+  .s-title { margin-bottom: 40px; }
+}

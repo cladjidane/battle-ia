@@ -21,7 +21,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <div class="hero-bottom">
     <p class="hero-desc">
-      Une soirée live de 3 heures. Des profils totalement différents.<br/>
+      Une soirée live de 3 heures. Des profils totalement différents.
       <strong>1 heure pour construire un projet avec l'IA, en partant de zéro, avec le même budget de tokens pour tous.</strong>
     </p>
     <div class="hero-stats">
@@ -43,40 +43,44 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <div class="s-eyebrow reveal"><span>Pourquoi cet événement</span></div>
   <div class="s-title reveal rd1">L'IA ne se comprend pas<br/>en lisant des articles.</div>
 
-  <div class="mh-grid">
-    <div class="mh-intro reveal rd2">
-      <p>Elle se comprend en la voyant travailler. C'est pour ça qu'on organise la Battle : un événement live, sans filtre, où des gens de profils très différents construisent un projet réel en une heure, avec les mêmes outils, le même budget, devant tout le monde.</p>
-      <p>On ne cherche pas à impressionner. On cherche à rendre visible ce qui est <strong>déjà vrai.</strong></p>
-      <a href="/la-battle" class="btn-ghost" style="margin-top:28px;">Découvrir le format →</a>
-    </div>
+  <p class="lead reveal rd2" style="margin-bottom:24px;">Elle se comprend en la voyant travailler. C'est pour ça qu'on organise la Battle : un événement live, sans filtre, où des gens de profils très différents construisent un projet réel en une heure.</p>
 
-    <div class="mh-blocks">
-      <a href="/participer" class="mh-block reveal rd2">
-        <div class="mhb-num">01</div>
-        <div class="mhb-title">Vous avez une idée</div>
-        <div class="mhb-text">Développeur, designer, profil métier, curieux — vous arrivez avec un projet. Vous repartez avec quelque chose qui existe.</div>
-        <div class="mhb-cta">Participer →</div>
-      </a>
-      <a href="/nous-soutenir" class="mh-block reveal rd3">
-        <div class="mhb-num">02</div>
-        <div class="mhb-title">Le projet vous parle</div>
-        <div class="mhb-text">Entreprise, collectivité, organisme — si l'initiative vous intéresse, on est ouverts à la discussion.</div>
-        <div class="mhb-cta">Nous soutenir →</div>
-      </a>
-      <a href="/edition-01" class="mh-block reveal rd4">
-        <div class="mhb-num">03</div>
-        <div class="mhb-title">Mai 2026 — Brest</div>
-        <div class="mhb-text">French Tech Brest. Entrée libre pour les spectateurs. Première édition.</div>
-        <div class="mhb-cta">L'édition 01 →</div>
-      </a>
-    </div>
+  <p class="reveal rd2" style="max-width:600px;margin-bottom:40px;">On ne cherche pas à impressionner. On cherche à rendre visible ce qui est <strong>déjà vrai.</strong></p>
+
+  <a href="/la-battle" class="btn-ghost reveal rd3">Découvrir le format →</a>
+
+  <div class="mh-entries reveal rd4">
+    <a href="/participer" class="mh-entry">
+      <span class="mhe-num">01</span>
+      <span class="mhe-body">
+        <strong>Vous avez une idée</strong>
+        Développeur, designer, profil métier, curieux. Vous arrivez avec un projet. Vous repartez avec quelque chose qui existe.
+      </span>
+      <span class="mhe-arrow">→</span>
+    </a>
+    <a href="/nous-soutenir" class="mh-entry">
+      <span class="mhe-num">02</span>
+      <span class="mhe-body">
+        <strong>Le projet vous parle</strong>
+        Entreprise, collectivité, organisme. Si l'initiative vous intéresse, on est ouverts à la discussion.
+      </span>
+      <span class="mhe-arrow">→</span>
+    </a>
+    <a href="/edition-01" class="mh-entry">
+      <span class="mhe-num">03</span>
+      <span class="mhe-body">
+        <strong>Mai 2026 — Brest</strong>
+        French Tech Brest. Entrée libre pour les spectateurs. Première édition.
+      </span>
+      <span class="mhe-arrow">→</span>
+    </a>
   </div>
 </section>
 
 <!-- CTA HOME -->
 <section class="cta-home">
   <div class="ctah-inner reveal">
-    <div class="ctah-title">Est-ce qu'on regarde,<br/><span>ou est-ce qu'on s'y met ?</span></div>
+    <div class="s-title" style="text-align:center;margin-bottom:48px;">Est-ce qu'on regarde,<br/><span class="yel">ou est-ce qu'on s'y met ?</span></div>
     <div class="ctah-actions">
       <a href="/participer" class="btn-main">Je veux participer →</a>
       <span class="or-sep">ou</span>
@@ -91,22 +95,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 /* HERO */
 .hero {
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 0 max(56px, calc(50% - 600px)) 80px;
+  padding: 0 var(--pad-x) 80px;
   position: relative;
   overflow: hidden;
   border-top: none;
 }
 .hero-bg {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-  overflow: hidden;
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none; overflow: hidden;
 }
 .hero-bg span {
   font-family: var(--font-display);
@@ -124,21 +125,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 }
 
 .hero-tag {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  display: flex; align-items: center; gap: 14px;
   margin-bottom: 36px;
-  opacity: 0;
-  animation: fadeup 0.9s 0.1s forwards;
+  opacity: 0; animation: fadeup 0.9s 0.1s forwards;
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: var(--text-mono);
   letter-spacing: 0.2em;
   color: var(--yellow);
   text-transform: uppercase;
 }
 .tag-pulse {
-  width: 7px; height: 7px;
-  border-radius: 50%;
+  width: 8px; height: 8px; border-radius: 50%;
   background: var(--yellow);
   animation: blink 1.8s ease-in-out infinite;
   flex-shrink: 0;
@@ -147,75 +144,52 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(80px, 12vw, 160px);
+  font-size: clamp(80px, 13vw, 180px);
   line-height: 0.86;
   margin-bottom: 48px;
-  opacity: 0;
-  animation: fadeup 0.9s 0.25s forwards;
+  opacity: 0; animation: fadeup 0.9s 0.25s forwards;
 }
-.hero-title .l1 { display: block; }
+.hero-title .l1 { display: block; color: var(--text-1); }
 .hero-title .l2 { display: block; color: var(--yellow); }
-.hero-title .l3 { display: block; -webkit-text-stroke: 1.5px var(--white); color: transparent; }
+.hero-title .l3 { display: block; -webkit-text-stroke: 2px var(--white); color: transparent; }
 
 .hero-bottom {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 56px;
   align-items: end;
-  opacity: 0;
-  animation: fadeup 0.9s 0.45s forwards;
+  opacity: 0; animation: fadeup 0.9s 0.45s forwards;
 }
 .hero-desc {
-  font-size: 16px;
-  font-weight: 300;
-  color: #888;
-  line-height: 1.75;
-  max-width: 420px;
+  max-width: 460px;
 }
-.hero-desc strong { color: var(--white); font-weight: 500; }
 
 .hero-stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border: 1px solid var(--border2);
+  display: flex; gap: 40px; justify-content: flex-end;
 }
-.hs {
-  padding: 20px 14px;
-  border-right: 1px solid var(--border2);
-  text-align: center;
-}
-.hs:last-child { border-right: none; }
+.hs { text-align: center; }
 .hs-val {
   font-family: var(--font-display);
-  font-size: 42px;
+  font-size: 48px;
   color: var(--yellow);
   line-height: 1;
 }
 .hs-lbl {
   font-family: var(--font-mono);
-  font-size: 8px;
-  color: var(--grey);
+  font-size: var(--text-mono-sm);
+  color: var(--text-3);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-top: 5px;
+  margin-top: 8px;
 }
 
 .scroll-hint {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  opacity: 0;
-  animation: fadeup 0.9s 1.1s forwards;
+  position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  opacity: 0; animation: fadeup 0.9s 1.1s forwards;
   font-family: var(--font-mono);
-  font-size: 8px;
-  color: var(--grey);
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  font-size: 9px; color: var(--text-3);
+  letter-spacing: 0.18em; text-transform: uppercase;
 }
 .scroll-line {
   width: 1px; height: 44px;
@@ -228,7 +202,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   51%{ transform:scaleY(1); transform-origin:bottom; }
   100%{ transform:scaleY(0); transform-origin:bottom; }
 }
-
 @keyframes fadeup {
   from { opacity:0; transform:translateY(24px); }
   to   { opacity:1; transform:translateY(0); }
@@ -237,96 +210,63 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 /* MANIFESTE HOME */
 .manifeste-home { background: var(--dark); }
 
-.mh-grid {
+.mh-entries {
+  display: flex; flex-direction: column;
+  margin-top: 72px;
+}
+.mh-entry {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 72px;
-  align-items: start;
+  grid-template-columns: 56px 1fr 32px;
+  gap: 24px;
+  align-items: center;
+  padding: 32px 0;
+  border-top: 1px solid var(--border2);
+  transition: padding-left 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
-.mh-intro {
-  font-size: 15px;
-  color: #777;
-  line-height: 1.85;
-  font-weight: 300;
-}
-.mh-intro p { margin-bottom: 18px; }
-.mh-intro strong { color: #bbb; font-weight: 500; }
-
-.mh-blocks {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.mh-block {
-  display: block;
-  border: 1px solid var(--border2);
-  background: var(--card);
-  padding: 24px 28px;
-  transition: border-color 0.25s, background 0.25s;
-  position: relative;
-}
-.mh-block:hover { border-color: var(--yellow); background: #181818; }
-.mhb-num {
+.mh-entry:last-child { border-bottom: 1px solid var(--border2); }
+.mh-entry:hover { padding-left: 12px; }
+.mhe-num {
   font-family: var(--font-display);
-  font-size: 36px;
+  font-size: 40px;
   color: var(--border2);
   line-height: 1;
-  margin-bottom: 10px;
-  transition: color 0.25s;
+  transition: color 0.3s;
 }
-.mh-block:hover .mhb-num { color: var(--yellow); }
-.mhb-title {
-  font-size: 13px;
+.mh-entry:hover .mhe-num { color: var(--yellow); }
+.mhe-body { display: flex; flex-direction: column; gap: 4px; }
+.mhe-body strong {
+  font-size: var(--text-body);
   font-weight: 600;
-  color: var(--white);
-  margin-bottom: 6px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
 }
-.mhb-text {
-  font-size: 12px;
-  color: #666;
-  line-height: 1.6;
-  font-weight: 300;
-}
-.mhb-cta {
-  margin-top: 14px;
+.mhe-arrow {
   font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--yellow);
+  font-size: 16px;
+  color: var(--border2);
+  justify-self: end;
+  transition: color 0.3s, transform 0.3s;
 }
+.mh-entry:hover .mhe-arrow { color: var(--yellow); transform: translateX(4px); }
 
 /* CTA HOME */
 .cta-home {
   background: var(--black);
-  padding: 120px max(56px, calc(50% - 600px));
+  padding: 160px var(--pad-x);
   text-align: center;
 }
-.ctah-inner {}
-.ctah-title {
-  font-family: var(--font-display);
-  font-size: clamp(48px, 7vw, 96px);
-  line-height: 0.9;
-  margin-bottom: 48px;
-  letter-spacing: 0.01em;
-}
-.ctah-title span { color: var(--yellow); }
 .ctah-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
+  display: flex; align-items: center; justify-content: center;
+  gap: 20px; flex-wrap: wrap;
 }
 
 @media (max-width: 768px) {
-  .hero { padding: 0 24px 72px !important; }
+  .hero { padding: 0 24px 64px !important; }
+  .hero-title { font-size: clamp(56px, 16vw, 120px); }
   .hero-bottom { grid-template-columns: 1fr; gap: 32px; }
-  .hero-stats { grid-template-columns: repeat(2,1fr); }
-  .mh-grid { grid-template-columns: 1fr; gap: 48px; }
-  .cta-home { padding: 72px 24px !important; }
+  .hero-stats { justify-content: flex-start; gap: 28px; flex-wrap: wrap; }
+  .mh-entry { grid-template-columns: 44px 1fr 24px; gap: 16px; padding: 24px 0; }
+  .mhe-num { font-size: 32px; }
+  .cta-home { padding: 80px 24px !important; }
   .ctah-actions { flex-direction: column; align-items: stretch; }
   .btn-main, .btn-ghost { justify-content: center; }
 }

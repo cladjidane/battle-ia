@@ -22,11 +22,11 @@
 
 <style>
 footer {
-  padding: 36px max(56px, calc(50% - 600px));
+  padding: 40px var(--pad-x);
   border-top: 1px solid var(--border);
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  gap: 40px;
+  gap: 48px;
   align-items: center;
 }
 .f-left {
@@ -34,50 +34,47 @@ footer {
   flex-direction: column;
   gap: 4px;
   font-family: var(--font-mono);
-  font-size: 9px;
-  color: #2e2e2e;
+  font-size: var(--text-mono-sm);
+  color: var(--text-4);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   line-height: 1.8;
 }
-.f-brand {
-  color: var(--yellow);
-  font-weight: 700;
-}
+.f-brand { color: var(--yellow); font-weight: 700; }
 .f-nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 .f-nav a {
   font-family: var(--font-mono);
-  font-size: 8px;
-  color: #333;
+  font-size: 9px;
+  color: var(--text-4);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   transition: color 0.2s;
 }
-.f-nav a:hover { color: var(--white); }
+.f-nav a:hover { color: var(--text-1); }
 .f-right {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 4px;
   font-family: var(--font-mono);
-  font-size: 9px;
-  color: #2e2e2e;
+  font-size: var(--text-mono-sm);
+  color: var(--text-4);
   letter-spacing: 0.1em;
   text-align: right;
   line-height: 1.8;
 }
 .f-right a { color: var(--yellow); transition: color 0.2s; }
-.f-right a:hover { color: var(--white); }
+.f-right a:hover { color: var(--text-1); }
 
 @media (max-width: 768px) {
   footer {
     grid-template-columns: 1fr;
-    padding: 36px 24px;
+    padding: 40px 24px;
     gap: 28px;
     text-align: center;
   }

@@ -11,114 +11,117 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </div>
 
 <!-- INTRO -->
-<section class="intro-section">
-  <div class="intro-grid reveal">
-    <div class="intro-lead">
-      <p>Un événement live de 3 heures. 10 participants maximum, profils mixtes. Chacun arrive avec son idée, repart avec quelque chose qui existe — ou pas. Les deux sont valables.</p>
-      <p>Ce qui différencie la Battle, c'est la transparence totale : <strong>les écrans sont projetés en temps réel pendant l'heure de build.</strong> Le public voit les prompts, les itérations, les erreurs, les tokens qui s'écoulent.</p>
+<section class="sec-alt">
+  <p class="lead reveal" style="margin-bottom:20px;">Un événement live de 3 heures. 10 participants maximum, profils mixtes. Chacun arrive avec son idée, repart avec quelque chose qui existe.</p>
+  <p class="reveal rd1" style="max-width:640px;margin-bottom:64px;">Ce qui différencie la Battle, c'est la transparence totale : <strong>les écrans sont projetés en temps réel pendant l'heure de build.</strong> Le public voit les prompts, les itérations, les erreurs, les tokens qui s'écoulent.</p>
+
+  <div class="rules reveal rd2">
+    <div class="rule">
+      <span class="rule-num">01</span>
+      <div>
+        <strong>Projet libre</strong>
+        <p>Pas de thème imposé. Tu arrives avec ton idée. Un outil, une démo, une interface, un automatisme. Ce qui compte, c'est que ça parte de toi.</p>
+      </div>
     </div>
-    <div class="intro-rules">
-      <div class="rule-item">
-        <div class="rule-num">01</div>
-        <div class="rule-content">
-          <div class="rule-title">Projet libre</div>
-          <div class="rule-text">Pas de thème imposé. Tu arrives avec ton idée. Un outil, une démo, une interface, un automatisme — peu importe. Ce qui compte, c'est que ça parte de toi.</div>
-        </div>
+    <div class="rule">
+      <span class="rule-num">02</span>
+      <div>
+        <strong>Budget tokens identique</strong>
+        <p>Chaque participant reçoit le même crédit API. À toi de le gérer. C'est une ressource, pas un robinet ouvert.</p>
       </div>
-      <div class="rule-item">
-        <div class="rule-num">02</div>
-        <div class="rule-content">
-          <div class="rule-title">Budget tokens identique</div>
-          <div class="rule-text">Chaque participant reçoit le même crédit API. À toi de le gérer. C'est une ressource, pas un robinet ouvert.</div>
-        </div>
+    </div>
+    <div class="rule">
+      <span class="rule-num">03</span>
+      <div>
+        <strong>Recharge possible, mais pénalisante</strong>
+        <p>Tu peux recharger ton budget (+10$ de tokens). Mais chaque recharge coûte des points au score final. La maîtrise se mesure.</p>
       </div>
-      <div class="rule-item">
-        <div class="rule-num">03</div>
-        <div class="rule-content">
-          <div class="rule-title">Recharge possible, mais pénalisante</div>
-          <div class="rule-text">Tu peux recharger ton budget (+10$ de tokens). Mais chaque recharge coûte des points au score final. La maîtrise se mesure.</div>
-        </div>
-      </div>
-      <div class="rule-item">
-        <div class="rule-num">04</div>
-        <div class="rule-content">
-          <div class="rule-title">Démo live obligatoire</div>
-          <div class="rule-text">4 minutes. Pas de slides. Ce que tu as construit — ça tourne ou ça ne tourne pas. Les deux sont valables et honnêtes.</div>
-        </div>
+    </div>
+    <div class="rule">
+      <span class="rule-num">04</span>
+      <div>
+        <strong>Démo live obligatoire</strong>
+        <p>4 minutes. Pas de slides. Ce que tu as construit, ça tourne ou ça ne tourne pas. Les deux sont valables et honnêtes.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- TIMELINE -->
-<section class="timeline-section">
+<section>
   <div class="s-eyebrow reveal"><span>Déroulé de soirée</span></div>
   <div class="s-title reveal rd1">3 heures.<br/>Pas une <span class="acc">de trop.</span></div>
 
   <div class="timeline reveal rd2">
+    <div class="tl-line"></div>
     <div class="tl-item">
+      <div class="tl-dot"></div>
       <div class="tl-time">19H00</div>
       <div class="tl-content">
-        <div class="tl-name">Accueil & présentation des projets</div>
-        <div class="tl-desc">Chaque participant présente son idée en 2 min. Les mentors challengent, affinent, orientent. 30 minutes pour clarifier avant le top départ.</div>
+        <strong>Accueil & présentation des projets</strong>
+        <p>Chaque participant présente son idée en 2 min. Les mentors challengent, affinent, orientent. 30 minutes pour clarifier avant le top départ.</p>
       </div>
     </div>
     <div class="tl-item tl-key">
+      <div class="tl-dot"></div>
       <div class="tl-time">19H30</div>
       <div class="tl-content">
-        <div class="tl-name">🔴 TOP CHRONO — Le build commence</div>
-        <div class="tl-desc">1 heure pile. Budget tokens alloué, environnement isolé, écrans captés. C'est parti.</div>
+        <strong>TOP CHRONO — Le build commence</strong>
+        <p>1 heure pile. Budget tokens alloué, environnement isolé, écrans captés. C'est parti.</p>
       </div>
     </div>
     <div class="tl-item">
+      <div class="tl-dot"></div>
       <div class="tl-time">20H30</div>
       <div class="tl-content">
-        <div class="tl-name">Fin du build — Écran live public</div>
-        <div class="tl-desc">Les claviers posés. Affichage en temps réel des consommations tokens de chaque participant. 15 min de préparation pitch pendant que les chiffres parlent.</div>
+        <strong>Fin du build — Écran live public</strong>
+        <p>Les claviers posés. Affichage en temps réel des consommations tokens. 15 min de préparation pitch pendant que les chiffres parlent.</p>
       </div>
     </div>
     <div class="tl-item">
+      <div class="tl-dot"></div>
       <div class="tl-time">20H45</div>
       <div class="tl-content">
-        <div class="tl-name">Démos live — 4 min par participant</div>
-        <div class="tl-desc">Pas de slides. Pas de PowerPoint. Juste ce qui a été construit. Le jury observe, le public voit.</div>
+        <strong>Démos live — 4 min par participant</strong>
+        <p>Pas de slides. Pas de PowerPoint. Juste ce qui a été construit. Le jury observe, le public voit.</p>
       </div>
     </div>
     <div class="tl-item">
+      <div class="tl-dot"></div>
       <div class="tl-time">21H30</div>
       <div class="tl-content">
-        <div class="tl-name">Vote jury + résultats + échanges</div>
-        <div class="tl-desc">Score final, debriefing collectif sur les approches de chacun. La partie la plus riche de la soirée.</div>
+        <strong>Vote jury + résultats + échanges</strong>
+        <p>Score final, debriefing collectif sur les approches de chacun. La partie la plus riche de la soirée.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- SCORING + TOKEN -->
-<section class="scoring-section">
-  <div class="scoring-grid">
+<section class="sec-alt">
+  <div class="scoring-layout">
     <div class="scoring-left reveal">
       <div class="s-eyebrow"><span>Le scoring</span></div>
       <div class="score-items">
-        <div class="score-item">
-          <div class="score-pct pos">50%</div>
-          <div class="score-detail">
-            <div class="score-name">Résultat jury</div>
-            <div class="score-sub">Utilité perçue, solidité de la démo, wow factor. Évalué par un jury de 3 personnes issues de profils différents.</div>
+        <div class="score-row">
+          <span class="score-pct">50%</span>
+          <div>
+            <strong>Résultat jury</strong>
+            <p>Utilité perçue, solidité de la démo, wow factor. Évalué par un jury de 3 personnes issues de profils différents.</p>
           </div>
         </div>
-        <div class="score-item">
-          <div class="score-pct pos">30%</div>
-          <div class="score-detail">
-            <div class="score-name">Efficacité tokens</div>
-            <div class="score-sub">Ratio valeur produite / tokens consommés. Moins tu en dépenses pour un résultat équivalent, mieux tu scores.</div>
+        <div class="score-row">
+          <span class="score-pct">30%</span>
+          <div>
+            <strong>Efficacité tokens</strong>
+            <p>Ratio valeur produite / tokens consommés. Moins tu en dépenses pour un résultat équivalent, mieux tu scores.</p>
           </div>
         </div>
-        <div class="score-item">
-          <div class="score-pct neg">−20%</div>
-          <div class="score-detail">
-            <div class="score-name">Pénalité recharges</div>
-            <div class="score-sub">Chaque recharge de budget pénalise le score final. La maîtrise des ressources est une compétence, pas un détail.</div>
+        <div class="score-row neg">
+          <span class="score-pct">−20%</span>
+          <div>
+            <strong>Pénalité recharges</strong>
+            <p>Chaque recharge de budget pénalise le score final. La maîtrise des ressources est une compétence, pas un détail.</p>
           </div>
         </div>
       </div>
@@ -126,50 +129,43 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <div class="scoring-right reveal rd2">
       <div class="s-eyebrow"><span>La mécanique tokens</span></div>
-      <div class="token-explainer">
-        <p>Les tokens, c'est la monnaie de l'IA. Chaque mot que tu envoies, chaque réponse que tu reçois — ça coûte des tokens. Et les tokens coûtent de l'argent réel.</p>
-        <p>Dans la plupart des usages quotidiens, ce coût est invisible. Dans la Battle, <strong>il est public, en temps réel, sur écran partagé.</strong></p>
-        <p>Ce n'est pas un gadget. C'est le cœur du format. Apprendre à promper efficacement — c'est apprendre à produire plus avec moins. C'est une compétence professionnelle concrète, mesurable, qui a une valeur sur le marché.</p>
-      </div>
-      <div class="token-bar-demo">
-        <div class="tbd-label">
+      <p style="margin-bottom:16px;">Les tokens, c'est la monnaie de l'IA. Chaque mot que tu envoies, chaque réponse que tu reçois, ça coûte des tokens. Et les tokens coûtent de l'argent réel.</p>
+      <p style="margin-bottom:16px;">Dans la plupart des usages quotidiens, ce coût est invisible. Dans la Battle, <strong>il est public, en temps réel, sur écran partagé.</strong></p>
+      <p style="margin-bottom:32px;">Ce n'est pas un gadget. C'est le cœur du format. Apprendre à prompter efficacement, c'est apprendre à produire plus avec moins. C'est une compétence professionnelle concrète, mesurable, qui a une valeur sur le marché.</p>
+
+      <div class="token-viz">
+        <div class="tv-row">
           <span>Budget en cours</span>
-          <span class="tbd-pct">72%</span>
+          <span style="color:var(--yellow)">72%</span>
         </div>
-        <div class="tbd-track">
-          <div class="tbd-fill" style="width:72%"></div>
-        </div>
-        <div class="tbd-sub">14 200 tokens restants</div>
+        <div class="tv-track"><div class="tv-fill"></div></div>
+        <span style="color:var(--text-4)">14 200 tokens restants</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- WHO -->
-<section class="who-section">
+<section>
   <div class="s-eyebrow reveal"><span>Qui peut participer</span></div>
   <div class="s-title reveal rd1">N'importe qui avec<br/><span class="yel">une idée sérieuse.</span></div>
 
-  <div class="who-grid reveal rd2">
-    <div class="who-card">
-      <div class="wc-icon">⌨️</div>
-      <div class="wc-title">Développeurs</div>
-      <div class="wc-text">Tu codes depuis des années. La Battle te pose une question : est-ce que tu sais déléguer à l'IA, ou est-ce que tu passes encore ton temps à écrire ce qu'elle pourrait générer ?</div>
+  <div class="who-grid">
+    <div class="who-item reveal rd2">
+      <strong>⌨️ Développeurs</strong>
+      <p>Tu codes depuis des années. La Battle te pose une question : est-ce que tu sais déléguer à l'IA, ou est-ce que tu passes encore ton temps à écrire ce qu'elle pourrait générer ?</p>
     </div>
-    <div class="who-card">
-      <div class="wc-icon">🎨</div>
-      <div class="wc-title">Créatifs & designers</div>
-      <div class="wc-text">Pas besoin de coder. Un bon prompt bien posé peut produire une interface fonctionnelle en quelques minutes. Ta maîtrise du produit est ton avantage.</div>
+    <div class="who-item reveal rd3">
+      <strong>🎨 Créatifs & designers</strong>
+      <p>Pas besoin de coder. Un bon prompt bien posé peut produire une interface fonctionnelle en quelques minutes. Ta maîtrise du produit est ton avantage.</p>
     </div>
-    <div class="who-card">
-      <div class="wc-icon">💼</div>
-      <div class="wc-title">Profils métier</div>
-      <div class="wc-text">Tu connais ton secteur mieux que n'importe quel dev. Ce que l'IA ne peut pas faire, c'est poser les bonnes questions métier. Tu peux.</div>
+    <div class="who-item reveal rd4">
+      <strong>💼 Profils métier</strong>
+      <p>Tu connais ton secteur mieux que n'importe quel dev. Ce que l'IA ne peut pas faire, c'est poser les bonnes questions métier. Tu peux.</p>
     </div>
-    <div class="who-card">
-      <div class="wc-icon">🔍</div>
-      <div class="wc-title">Curieux</div>
-      <div class="wc-text">Tu utilises l'IA, tu veux aller plus loin. La Battle est un terrain d'expérimentation réel, avec un cadre et un retour concret sur ce que tu produis.</div>
+    <div class="who-item reveal rd5">
+      <strong>🔍 Curieux</strong>
+      <p>Tu utilises l'IA, tu veux aller plus loin. La Battle est un terrain d'expérimentation réel, avec un cadre et un retour concret sur ce que tu produis.</p>
     </div>
   </div>
 </section>
@@ -177,189 +173,140 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-.intro-section { background: var(--dark); }
-.intro-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 72px;
-  align-items: start;
-}
-.intro-lead {
-  font-size: 16px;
-  font-weight: 300;
-  color: #777;
-  line-height: 1.85;
-}
-.intro-lead p { margin-bottom: 20px; }
-.intro-lead strong { color: var(--white); font-weight: 500; }
+.sec-alt { background: var(--dark); }
 
-.intro-rules {
-  display: flex;
-  flex-direction: column;
+/* RULES */
+.rules { display: flex; flex-direction: column; }
+.rule {
+  display: grid;
+  grid-template-columns: 64px 1fr;
   gap: 24px;
+  align-items: baseline;
+  padding: 32px 0;
+  border-top: 1px solid var(--border);
 }
-.rule-item {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-  padding-bottom: 24px;
-  border-bottom: 1px solid var(--border);
-}
-.rule-item:last-child { border-bottom: none; padding-bottom: 0; }
+.rule:last-child { border-bottom: 1px solid var(--border); }
 .rule-num {
   font-family: var(--font-display);
   font-size: 40px;
   color: var(--orange);
   line-height: 1;
-  flex-shrink: 0;
-  width: 48px;
 }
-.rule-title {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--white);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 6px;
-}
-.rule-text { font-size: 13px; color: #666; line-height: 1.6; font-weight: 300; }
+.rule strong { display: block; margin-bottom: 6px; }
+.rule p { margin: 0; }
 
 /* TIMELINE */
-.timeline-section { background: var(--black); }
-.timeline { display: flex; flex-direction: column; border: 1px solid var(--border2); max-width: 680px; }
-.tl-item {
-  display: grid;
-  grid-template-columns: 88px 1fr;
-  border-bottom: 1px solid var(--border);
-  transition: background 0.2s;
+.timeline {
+  position: relative;
+  max-width: 680px;
+  padding-left: 28px;
 }
-.tl-item:last-child { border-bottom: none; }
-.tl-item:hover { background: #0d0d0d; }
-.tl-key { background: #0d0d0d; }
-.tl-time {
+.tl-line {
+  position: absolute;
+  left: 4px; top: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--yellow) 0%, var(--orange) 40%, var(--border2) 100%);
+}
+.tl-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 20px;
+  padding: 24px 0;
+}
+.tl-dot {
+  position: absolute;
+  left: -28px; top: 30px;
+  width: 9px; height: 9px;
+  border-radius: 50%;
   background: var(--dark);
-  border-right: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border: 2px solid var(--border2);
+}
+.tl-key .tl-dot {
+  background: var(--orange);
+  border-color: var(--orange);
+  box-shadow: 0 0 10px rgba(255, 77, 0, 0.35);
+}
+.tl-time {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: var(--text-mono);
   font-weight: 700;
   color: var(--orange);
-  padding: 18px 10px;
-  text-align: center;
+  padding-top: 1px;
 }
-.tl-content { padding: 18px 24px; }
-.tl-name { font-size: 13px; font-weight: 600; color: var(--white); margin-bottom: 5px; }
-.tl-desc { font-size: 12px; color: var(--grey); line-height: 1.55; font-weight: 300; }
+.tl-content strong { display: block; margin-bottom: 4px; }
+.tl-content p { margin: 0; }
 
 /* SCORING */
-.scoring-section { background: var(--dark); }
-.scoring-grid {
+.scoring-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 72px;
+  gap: 80px;
   align-items: start;
 }
-.score-items { display: flex; flex-direction: column; gap: 2px; }
-.score-item {
-  display: flex;
-  align-items: stretch;
-  border: 1px solid var(--border2);
-  overflow: hidden;
+.score-items { display: flex; flex-direction: column; }
+.score-row {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 24px;
+  align-items: baseline;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
 }
+.score-row:first-child { border-top: 1px solid var(--border); }
 .score-pct {
   font-family: var(--font-display);
-  font-size: 34px;
-  padding: 14px 18px;
-  min-width: 86px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+  font-size: 36px;
+  color: var(--yellow);
+  line-height: 1;
 }
-.score-pct.pos { background: var(--card); color: var(--yellow); }
-.score-pct.neg { background: #160c0a; color: var(--orange); }
-.score-detail { padding: 14px 20px; border-left: 1px solid var(--border); }
-.score-name {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--white);
+.score-row.neg .score-pct { color: var(--orange); }
+.score-row strong { display: block; margin-bottom: 4px; }
+.score-row p { margin: 0; }
+
+.token-viz {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono);
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 4px;
 }
-.score-sub { font-size: 11px; color: var(--grey); line-height: 1.5; }
-
-.token-explainer {
-  font-size: 14px;
-  color: #666;
-  line-height: 1.8;
-  font-weight: 300;
-  margin-bottom: 28px;
-}
-.token-explainer p { margin-bottom: 16px; }
-.token-explainer strong { color: #bbb; font-weight: 500; }
-
-.token-bar-demo { border: 1px solid var(--border2); padding: 18px 20px; }
-.tbd-label {
+.tv-row {
   display: flex;
   justify-content: space-between;
-  font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--grey);
+  color: var(--text-3);
   margin-bottom: 10px;
 }
-.tbd-pct { color: var(--yellow); }
-.tbd-track {
-  height: 6px;
+.tv-track {
+  height: 3px;
   background: var(--border2);
-  overflow: hidden;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
-.tbd-fill {
+.tv-fill {
   height: 100%;
+  width: 72%;
   background: linear-gradient(90deg, var(--yellow), var(--orange));
-}
-.tbd-sub {
-  font-family: var(--font-mono);
-  font-size: 9px;
-  color: var(--grey);
-  letter-spacing: 0.1em;
 }
 
 /* WHO */
-.who-section { background: var(--black); }
 .who-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2px;
+  grid-template-columns: 1fr 1fr;
 }
-.who-card {
-  background: var(--card);
-  border: 1px solid var(--border2);
-  padding: 28px 24px;
-  transition: border-color 0.25s, background 0.25s;
+.who-item {
+  padding: 36px 32px;
+  border-top: 1px solid var(--border);
+  transition: background 0.3s;
 }
-.who-card:hover { border-color: var(--yellow); background: #181818; }
-.wc-icon { font-size: 28px; margin-bottom: 16px; }
-.wc-title {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--white);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 10px;
-}
-.wc-text { font-size: 12px; color: #666; line-height: 1.65; font-weight: 300; }
+.who-item:nth-child(odd) { border-right: 1px solid var(--border); }
+.who-item:hover { background: rgba(255,229,0,0.015); }
+.who-item strong { display: block; margin-bottom: 10px; }
+.who-item p { margin: 0; }
 
 @media (max-width: 768px) {
-  .intro-grid, .scoring-grid { grid-template-columns: 1fr; gap: 48px; }
-  .who-grid { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 480px) {
+  .rule { grid-template-columns: 48px 1fr; gap: 16px; }
+  .rule-num { font-size: 32px; }
+  .scoring-layout { grid-template-columns: 1fr; gap: 48px; }
   .who-grid { grid-template-columns: 1fr; }
+  .who-item { border-right: none !important; padding: 28px 0; }
 }
 </style>

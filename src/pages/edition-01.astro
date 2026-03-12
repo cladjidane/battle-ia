@@ -9,68 +9,50 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <h1>Mai 2026.<br/><span class="out">Brest.</span></h1>
 </div>
 
-<section class="ed-infos">
-  <div class="ed-grid reveal">
+<section class="sec-alt">
+  <div class="ed-layout reveal">
     <div class="ed-facts">
-      <div class="ef-item">
-        <div class="ef-label">Lieu</div>
-        <div class="ef-val">French Tech Brest</div>
-        <div class="ef-sub">Technopole Brest Iroise, Brest</div>
+      <div class="ef">
+        <span class="mono-label" style="color:var(--text-3)">Lieu</span>
+        <span class="ef-val">French Tech Brest</span>
+        <span class="ef-sub">Technopole Brest Iroise, Brest</span>
       </div>
-      <div class="ef-item">
-        <div class="ef-label">Date</div>
-        <div class="ef-val">Mai 2026</div>
-        <div class="ef-sub">Date précise à confirmer</div>
+      <div class="ef">
+        <span class="mono-label" style="color:var(--text-3)">Date</span>
+        <span class="ef-val">Mai 2026</span>
+        <span class="ef-sub">Date précise à confirmer</span>
       </div>
-      <div class="ef-item">
-        <div class="ef-label">Format</div>
-        <div class="ef-val">19H00 — 22H00</div>
-        <div class="ef-sub">3 heures, accès libre pour le public</div>
+      <div class="ef">
+        <span class="mono-label" style="color:var(--text-3)">Format</span>
+        <span class="ef-val">19H00 — 22H00</span>
+        <span class="ef-sub">3 heures, accès libre pour le public</span>
       </div>
-      <div class="ef-item">
-        <div class="ef-label">Participants</div>
-        <div class="ef-val">10 max</div>
-        <div class="ef-sub">Profils mixtes, inscription requise</div>
+      <div class="ef">
+        <span class="mono-label" style="color:var(--text-3)">Participants</span>
+        <span class="ef-val">10 max</span>
+        <span class="ef-sub">Profils mixtes, inscription requise</span>
       </div>
     </div>
 
     <div class="ed-status">
-      <div class="es-title">Où on en est</div>
+      <span class="mono-label" style="color:var(--text-3);display:block;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--border);">Où on en est</span>
       <div class="es-items">
-        <div class="es-item done">
-          <div class="es-dot"></div>
-          <div class="es-text">Format validé</div>
-        </div>
-        <div class="es-item done">
-          <div class="es-dot"></div>
-          <div class="es-text">Lieu confirmé — French Tech Brest</div>
-        </div>
-        <div class="es-item active">
-          <div class="es-dot"></div>
-          <div class="es-text">Démarche auprès des soutiens locaux <span class="es-tag">En cours</span></div>
-        </div>
-        <div class="es-item">
-          <div class="es-dot"></div>
-          <div class="es-text">Ouverture des candidatures participants</div>
-        </div>
-        <div class="es-item">
-          <div class="es-dot"></div>
-          <div class="es-text">Communication publique</div>
-        </div>
-        <div class="es-item">
-          <div class="es-dot"></div>
-          <div class="es-text">La Battle — Édition 01</div>
-        </div>
+        <div class="es-item done"><div class="es-dot"></div><span>Format validé</span></div>
+        <div class="es-item done"><div class="es-dot"></div><span>Lieu confirmé — French Tech Brest</span></div>
+        <div class="es-item active"><div class="es-dot"></div><span>Démarche auprès des soutiens locaux <em>En cours</em></span></div>
+        <div class="es-item"><div class="es-dot"></div><span>Ouverture des candidatures participants</span></div>
+        <div class="es-item"><div class="es-dot"></div><span>Communication publique</span></div>
+        <div class="es-item"><div class="es-dot"></div><span>La Battle — Édition 01</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="ed-cta" style="text-align:center;">
+<section style="text-align:center;">
   <div class="reveal">
     <div class="s-title" style="margin-bottom:24px;">Tu veux être<br/><span class="yel">dans la boucle ?</span></div>
-    <p style="font-size:15px;color:#666;font-weight:300;margin-bottom:36px;max-width:400px;margin-left:auto;margin-right:auto;line-height:1.75;">Participer, soutenir ou juste suivre — laisse ton email et on te tient au courant dès qu'il y a du nouveau.</p>
-    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+    <p style="max-width:440px;margin:0 auto 36px;">Participer, soutenir ou juste suivre — on te tient au courant dès qu'il y a du nouveau.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
       <a href="/participer" class="btn-main">Je veux participer →</a>
       <a href="/nous-soutenir" class="btn-ghost">Soutenir le projet</a>
     </div>
@@ -80,81 +62,67 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-.ed-infos { background: var(--dark); }
-.ed-grid {
+.sec-alt { background: var(--dark); }
+
+.ed-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 72px;
+  gap: 80px;
+  align-items: start;
 }
-.ed-facts { display: flex; flex-direction: column; gap: 2px; }
-.ef-item {
-  border: 1px solid var(--border2);
-  background: var(--card);
-  padding: 24px 28px;
+.ed-facts { display: flex; flex-direction: column; }
+.ef {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
 }
-.ef-label {
-  font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--grey);
-  margin-bottom: 8px;
-}
+.ef:first-child { border-top: 1px solid var(--border); }
 .ef-val {
+  display: block;
   font-family: var(--font-display);
   font-size: 36px;
   color: var(--yellow);
   line-height: 1;
-  margin-bottom: 4px;
+  margin: 8px 0 4px;
   letter-spacing: 0.02em;
 }
-.ef-sub { font-size: 12px; color: #555; font-weight: 300; }
-
-.es-title {
-  font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--grey);
-  margin-bottom: 24px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--border);
+.ef-sub {
+  display: block;
+  color: var(--text-3);
 }
-.es-items { display: flex; flex-direction: column; gap: 0; }
+
+.es-items { display: flex; flex-direction: column; }
 .es-item {
   display: flex;
   align-items: flex-start;
   gap: 16px;
   padding: 16px 0;
   border-bottom: 1px solid var(--border);
-  font-size: 13px;
-  color: #444;
-  font-weight: 300;
+  color: var(--text-3);
 }
 .es-item:last-child { border-bottom: none; }
-.es-item.done { color: var(--white); }
-.es-item.active { color: var(--white); }
+.es-item.done { color: var(--text-1); }
+.es-item.active { color: var(--text-1); }
 .es-dot {
-  width: 8px; height: 8px;
+  width: 9px; height: 9px;
   border-radius: 50%;
   background: var(--border2);
   flex-shrink: 0;
-  margin-top: 4px;
+  margin-top: 6px;
 }
 .es-item.done .es-dot { background: var(--yellow); }
 .es-item.active .es-dot {
   background: var(--orange);
-  box-shadow: 0 0 0 3px rgba(255,77,0,0.2);
+  box-shadow: 0 0 0 4px rgba(255,77,0,0.15);
   animation: pulse 1.5s ease-in-out infinite;
 }
 @keyframes pulse {
-  0%,100% { box-shadow: 0 0 0 3px rgba(255,77,0,0.2); }
-  50% { box-shadow: 0 0 0 6px rgba(255,77,0,0.05); }
+  0%,100% { box-shadow: 0 0 0 4px rgba(255,77,0,0.15); }
+  50% { box-shadow: 0 0 0 8px rgba(255,77,0,0.05); }
 }
-.es-tag {
-  display: inline-block;
+.es-item em {
+  font-style: normal;
   font-family: var(--font-mono);
-  font-size: 8px;
+  font-size: 9px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--orange);
@@ -164,9 +132,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   vertical-align: middle;
 }
 
-.ed-cta { background: var(--black); }
-
 @media (max-width: 768px) {
-  .ed-grid { grid-template-columns: 1fr; gap: 40px; }
+  .ed-layout { grid-template-columns: 1fr; gap: 40px; }
 }
 </style>

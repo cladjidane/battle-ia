@@ -9,51 +9,50 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <h1>Qui on <span class="yel">est.</span></h1>
 </div>
 
-<section class="about-section">
-  <div class="about-grid">
+<section class="sec-alt">
+  <div class="about-layout">
     <div class="about-main reveal">
-      <p class="about-lead">Context Collective est une communauté bretonne de professionnels qui pratiquent et partagent autour de l'intelligence artificielle.</p>
-      <div class="about-body">
-        <p>Pas une association. Pas une entreprise. Un collectif informel qui s'est formé autour d'une conviction simple : pour comprendre l'IA, il faut l'utiliser, en parler honnêtement, et partager ce qu'on apprend.</p>
-        <p>On organise des CaféIA, des talks, des ateliers. L'AI Creation Battle est l'un des projets qu'on porte pour rendre ces sujets concrets et accessibles sur le territoire breton.</p>
-        <p>Les membres de Context Collective sont des développeurs, des designers, des consultants, des entrepreneurs — des gens qui utilisent l'IA dans leur travail réel et qui ont envie d'en parler sans bullshit.</p>
-      </div>
+      <p class="lead" style="margin-bottom:32px;">Context Collective est une communauté bretonne de professionnels qui pratiquent et partagent autour de l'intelligence artificielle.</p>
+      <p style="margin-bottom:16px;">Pas une association. Pas une entreprise. Un collectif informel qui s'est formé autour d'une conviction simple : pour comprendre l'IA, il faut l'utiliser, en parler honnêtement, et partager ce qu'on apprend.</p>
+      <p style="margin-bottom:16px;">On organise des CaféIA, des talks, des ateliers. L'AI Creation Battle est l'un des projets qu'on porte pour rendre ces sujets concrets et accessibles sur le territoire breton.</p>
+      <p>Les membres de Context Collective sont des développeurs, des designers, des consultants, des entrepreneurs — des gens qui utilisent l'IA dans leur travail réel et qui ont envie d'en parler sans bullshit.</p>
     </div>
 
     <div class="about-side">
-      <div class="as-block reveal rd1">
-        <div class="asb-label">Créé en</div>
-        <div class="asb-val">2025</div>
+      <div class="as-fact reveal rd1">
+        <span class="mono-label" style="color:var(--text-3)">Créé en</span>
+        <span class="asf-val">2025</span>
       </div>
-      <div class="as-block reveal rd2">
-        <div class="asb-label">Basé à</div>
-        <div class="asb-val">Brest<br/><span>Bretagne</span></div>
+      <div class="as-fact reveal rd2">
+        <span class="mono-label" style="color:var(--text-3)">Basé à</span>
+        <span class="asf-val">Brest</span>
+        <span class="asf-sub">Bretagne</span>
       </div>
-      <div class="as-block reveal rd3">
-        <div class="asb-label">Activités</div>
-        <div class="asb-items">
-          <div class="asb-item">CaféIA</div>
-          <div class="asb-item">Talks & conférences</div>
-          <div class="asb-item">Ateliers pratiques</div>
-          <div class="asb-item">AI Creation Battle</div>
+      <div class="as-fact reveal rd3">
+        <span class="mono-label" style="color:var(--text-3)">Activités</span>
+        <div class="asf-list">
+          <span>→ CaféIA</span>
+          <span>→ Talks & conférences</span>
+          <span>→ Ateliers pratiques</span>
+          <span>→ AI Creation Battle</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="orga-section">
+<section>
   <div class="s-eyebrow reveal"><span>L'organisation de cet événement</span></div>
-  <div class="orga-card reveal rd1">
-    <div class="oc-left">
-      <div class="oc-name">Fabien Canu</div>
-      <div class="oc-role">Organisateur principal — AI Creation Battle</div>
-      <div class="oc-company">Fondateur de Koality, membre Context Collective</div>
+  <div class="orga-layout reveal rd1">
+    <div class="orga-id">
+      <div class="oi-name">Fabien Canu</div>
+      <div class="oi-role">Organisateur principal</div>
+      <span class="mono-label" style="color:var(--text-3);margin-top:6px;display:block;">Fondateur de Koality, membre Context Collective</span>
     </div>
-    <div class="oc-right">
-      <p>Développeur full-stack depuis 25 ans. Dirige Koality, agence spécialisée dans l'intégration IA pour les PME et les freelances, basée à Lesneven en Finistère.</p>
-      <p>Organise des CaféIA et des talks sur l'IA en Bretagne. Intervenant en formation sur les usages professionnels de l'IA.</p>
-      <a href="mailto:contact@koality.fr" class="btn-ghost" style="margin-top:20px;">contact@koality.fr →</a>
+    <div>
+      <p style="margin-bottom:16px;">Développeur full-stack depuis 25 ans. Dirige Koality, agence spécialisée dans l'intégration IA pour les PME et les freelances, basée à Lesneven en Finistère.</p>
+      <p style="margin-bottom:24px;">Organise des CaféIA et des talks sur l'IA en Bretagne. Intervenant en formation sur les usages professionnels de l'IA.</p>
+      <a href="mailto:contact@koality.fr" class="btn-ghost">contact@koality.fr →</a>
     </div>
   </div>
 </section>
@@ -61,77 +60,59 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-.about-section { background: var(--dark); }
-.about-grid {
+.sec-alt { background: var(--dark); }
+
+.about-layout {
   display: grid;
   grid-template-columns: 1fr 320px;
   gap: 80px;
   align-items: start;
 }
-.about-lead {
-  font-size: 20px;
-  font-weight: 300;
-  color: var(--white);
-  line-height: 1.6;
-  margin-bottom: 32px;
-  border-left: 3px solid var(--yellow);
-  padding-left: 24px;
-}
-.about-body { font-size: 15px; color: #666; line-height: 1.85; font-weight: 300; }
-.about-body p { margin-bottom: 18px; }
 
-.about-side { display: flex; flex-direction: column; gap: 2px; }
-.as-block { border: 1px solid var(--border2); background: var(--card); padding: 24px 26px; }
-.asb-label {
-  font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--grey);
-  margin-bottom: 8px;
+.about-side { display: flex; flex-direction: column; }
+.as-fact {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
 }
-.asb-val {
+.as-fact:first-child { border-top: 1px solid var(--border); }
+.asf-val {
+  display: block;
   font-family: var(--font-display);
-  font-size: 36px;
+  font-size: 40px;
   color: var(--yellow);
   line-height: 1.1;
-  letter-spacing: 0.02em;
+  margin-top: 8px;
 }
-.asb-val span { font-size: 20px; color: #555; }
-.asb-items { display: flex; flex-direction: column; gap: 6px; }
-.asb-item { font-size: 13px; color: #777; font-weight: 300; }
-.asb-item::before { content: '→ '; color: var(--yellow); }
+.asf-sub {
+  display: block;
+  color: var(--text-3);
+  margin-top: 2px;
+}
+.asf-list {
+  display: flex; flex-direction: column; gap: 6px;
+  margin-top: 8px;
+  color: var(--text-2);
+}
 
-.orga-section { background: var(--black); }
-.orga-card {
+.orga-layout {
   display: grid;
   grid-template-columns: 280px 1fr;
-  border: 1px solid var(--border2);
-  overflow: hidden;
+  gap: 56px;
+  align-items: start;
 }
-.oc-left {
-  background: var(--card);
-  border-right: 1px solid var(--border2);
-  padding: 32px 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.oc-name {
+.oi-name {
   font-family: var(--font-display);
-  font-size: 36px;
-  color: var(--white);
-  letter-spacing: 0.02em;
+  font-size: 40px;
+  color: var(--text-1);
   line-height: 1;
+  margin-bottom: 8px;
 }
-.oc-role { font-size: 12px; color: var(--yellow); font-weight: 300; line-height: 1.5; }
-.oc-company { font-family: var(--font-mono); font-size: 9px; color: var(--grey); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 4px; }
-.oc-right { padding: 32px 36px; }
-.oc-right p { font-size: 14px; color: #666; line-height: 1.75; font-weight: 300; margin-bottom: 14px; }
+.oi-role {
+  color: var(--yellow);
+}
 
 @media (max-width: 768px) {
-  .about-grid { grid-template-columns: 1fr; gap: 40px; }
-  .orga-card { grid-template-columns: 1fr; }
-  .oc-left { border-right: none; border-bottom: 1px solid var(--border2); }
+  .about-layout { grid-template-columns: 1fr; gap: 40px; }
+  .orga-layout { grid-template-columns: 1fr; gap: 28px; }
 }
 </style>

@@ -36,7 +36,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px max(56px, calc(50% - 600px));
+  padding: 20px var(--pad-x);
   transition: background 0.4s, border-color 0.4s;
   border-bottom: 1px solid transparent;
 }
@@ -47,38 +47,41 @@ nav.scrolled {
 }
 .nav-logo {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: var(--text-mono);
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   color: var(--yellow);
   text-transform: uppercase;
 }
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 32px;
 }
 .nav-link {
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: var(--text-mono-sm);
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--grey);
+  color: var(--text-3);
   transition: color 0.2s;
 }
-.nav-link:hover, .nav-link.active { color: var(--white); }
+.nav-link:hover, .nav-link.active { color: var(--text-1); }
 .nav-cta {
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: var(--text-mono-sm);
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--black);
   background: var(--yellow);
-  padding: 8px 18px;
-  transition: opacity 0.2s;
+  padding: 10px 20px;
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s;
 }
-.nav-cta:hover { opacity: 0.85; }
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(255, 229, 0, 0.12);
+}
 
 .nav-burger {
   display: none;
@@ -92,7 +95,7 @@ nav.scrolled {
 .nav-burger span {
   display: block;
   width: 22px; height: 1px;
-  background: var(--white);
+  background: var(--text-1);
   transition: transform 0.3s;
 }
 
@@ -105,28 +108,28 @@ nav.scrolled {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: 28px;
   padding: 80px 24px 48px;
 }
 .nav-mobile.open { display: flex; }
 .nm-link {
   font-family: var(--font-display);
-  font-size: 48px;
-  color: var(--white);
+  font-size: 52px;
+  color: var(--text-1);
   letter-spacing: 0.03em;
   transition: color 0.2s;
 }
 .nm-link:hover { color: var(--yellow); }
 .nm-cta {
-  margin-top: 16px;
+  margin-top: 20px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: var(--text-mono);
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--black);
   background: var(--yellow);
-  padding: 12px 28px;
+  padding: 14px 32px;
 }
 
 @media (max-width: 768px) {
