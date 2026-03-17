@@ -7,6 +7,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"><span>BATTLE</span></div>
+  <div class="hero-logo" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150"><path d="M141.14,99.54c.05-.06.11-.11.16-.17l-.33-.13-.17-.29-40.22-16.46c-.24,0-.45.03-.66.09l-.07-.03-.23.15c-.46.19-.88.46-1.32.68-6,3-12.7,8.17-18.86,12.27l-4.46,2.86c-.36.2-.72.35-1.04.37l16.21-26.09-17.12-41.08-17.08,41.12,16.34,25.91h-.12s-25.5-16.46-25.5-16.46c-12.51,5.13-25.15,10.05-37.57,15.4-.87.37-1.99.74-2.88,1.27l-1.06.44.16.27c-.05.06-.11.11-.16.17l.33.13.17.29,40.22,16.46c.24,0,.45-.03.66-.09l.07.03.23-.15c.46-.19.88-.46,1.32-.68,5.99-3,12.69-8.17,18.85-12.26l4.47-2.87c.36-.2.72-.35,1.04-.37l-16.21,26.09,17.12,41.08,17.08-41.12-16.34-25.91h.12s25.5,16.46,25.5,16.46c12.51-5.13,25.15-10.05,37.57-15.4.87-.37,1.99-.74,2.88-1.27l1.06-.44-.16-.27Z" transform="translate(-5, -25)" fill="currentColor"/></svg>
+  </div>
 
   <div class="hero-tag">
     <div class="tag-pulse"></div>
@@ -122,6 +125,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 @keyframes breathe {
   0%,100% { transform: scale(1); opacity:0.7; }
   50% { transform: scale(1.015); opacity:1; }
+}
+.hero-logo {
+  position: absolute;
+  right: var(--pad-x);
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(280px, 32vw, 520px);
+  color: var(--yellow);
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  animation: logofade 1.4s 0.6s forwards, logopulse 6s 2s ease-in-out infinite;
+}
+@keyframes logofade {
+  from { opacity: 0; transform: translateY(-50%) scale(0.95); }
+  to   { opacity: 0.07; transform: translateY(-50%) scale(1); }
+}
+@keyframes logopulse {
+  0%,100% { opacity: 0.07; }
+  50% { opacity: 0.12; }
 }
 
 .hero-tag {
@@ -260,6 +283,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 }
 
 @media (max-width: 768px) {
+  .hero-logo { display: none; }
   .hero { padding: 0 24px 64px !important; }
   .hero-title { font-size: clamp(56px, 16vw, 120px); }
   .hero-bottom { grid-template-columns: 1fr; gap: 32px; }
