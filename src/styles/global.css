@@ -14,8 +14,8 @@
   /* strict text colors — no others */
   --text-1: #F2EDE4;   /* headings, strong */
   --text-2: #888;       /* body text */
-  --text-3: #555;       /* secondary, meta */
-  --text-4: #333;       /* very subtle */
+  --text-3: #777;       /* secondary, meta */
+  --text-4: #555;       /* subtle but readable */
 
   --font-display: 'Bebas Neue', sans-serif;
   --font-mono:    'Space Mono', monospace;
